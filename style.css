@@ -55,7 +55,6 @@ Styling section
 body {
     font: 16px/28px 'Courier New', Courier, monospace;
     background-color: antiquewhite;
-    background-image: url(img/bluezenith.webp);
 }
 
 .container {
@@ -92,6 +91,7 @@ body {
 .hero {
     height: 300px;
     background-size: cover;
+    background-image: url(img/2soothingflower.png);
     background-position: 0 -10px; /*diatur berdasarkan x y*/
     border-bottom: 10px solid antiquewhite;
 }
