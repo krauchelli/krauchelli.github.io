@@ -1,136 +1,110 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+/* VARIABLES: Change these to change the whole theme */
+:root {
+    --bg-color: #0f172a;       /* Dark Navy (Deep Space) */
+    --card-bg: #1e293b;        /* Lighter Navy */
+    --text-color: #e2e8f0;     /* Soft White */
+    --accent-color: #38bdf8;   /* Cyan/Blue (Serenade Energy) */
+    --danger-color: #f43f5e;   /* Red (Repudiate/Dissonance) */
+    --hover-glow: 0 0 15px rgba(56, 189, 248, 0.5);
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-/*
-Styling section
-*/
 
 body {
-    font: 16px/28px 'Courier New', Courier, monospace;
-    background-color: antiquewhite;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .container {
-    width: 800px;
-    margin: auto;
-    background-color: white;
-}
-
-.header {
-    padding: 25px;
-    padding-bottom: 15px;
-    border-bottom: 5px solid antiquewhite;
-}
-.header .judul {
-    font-size: 40px; font-weight: bold;
-}
-
-.header ul li {
-    display: inline-block;
-    margin-top: 20px; margin-right: 20px;
-}
-
-.header a {
-    text-decoration: none;
-    color: rgb(51, 94, 51);
-}
-.header a:hover {
-    background-color: gainsboro;
-    color: black;
-    padding: 5px;
-}
-
-
-.hero {
-    height: 300px;
-    background-size: cover;
-    background-image: url(img/2soothingflower.png);
-    background-position: 0 -10px; /*diatur berdasarkan x y*/
-    border-bottom: 10px solid antiquewhite;
-}
-
-
-.content {
-    padding: 25px;
-    border-bottom: 10px solid antiquewhite;
-}
-
-.content h2 {
-    font-size: 25px;
-    font-weight: bold;
-}
-.content .penulis {
-    font-size: 15px;
-    margin-top: -5px;
-    border-bottom: 3px solid black;
-}
-.content .penulis a {
-    text-decoration: none;
-    padding: 5px;
-}
-.content .penulis a:hover {
-    background-color: gainsboro;
-    color: black;
-    
-}
-.content p {
-    margin-bottom: 10px;
-}
-
-
-.footer {
-    background-color: silver;
-    padding: 15px;
-}
-
-.footer .copy {
-    font-size: 12px;
+    width: 100%;
+    max-width: 400px; /* Mobile width */
+    padding: 40px 20px;
     text-align: center;
+}
+
+/* AVATAR */
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* TEXT STYLES */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: #94a3b8; /* Muted text */
+    margin-bottom: 20px;
+}
+
+/* STATUS BADGE */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.status-dot {
+    height: 8px;
+    width: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* LINKS */
+.links-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    box-shadow: var(--hover-glow);
+}
+
+/* SPECIAL "DANGER" LINK */
+.link-card.special {
+    border-color: rgba(244, 63, 94, 0.3);
+}
+
+.link-card.special:hover {
+    border-color: var(--danger-color);
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.5);
+    color: var(--danger-color);
 }
